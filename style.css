@@ -1,5 +1,10 @@
 html {
   scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Navigation bar*/
@@ -74,6 +79,8 @@ body {
   font-size: 16px;
   color: #555;
 }
+/*background*/
+
 /*description*/
 
 
@@ -87,4 +94,9 @@ body {
 #contact img {
   width: 20px;
   height: 20px;
+  opacity: 1;
+}
+
+#contact img:hover {
+  opacity: 0.5;
 }
