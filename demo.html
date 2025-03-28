@@ -1,66 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
-
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <div id="navbar">
-        <a href="#BG">Background</a>
-        <a href="#MH">My Hobbies</a>
-        <a href="#MFL">My Favorite Languages</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Lightbox CSS for gallery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Preloader styles */
+    #preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #003366; /* dark blue */
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Navbar customization */
+    .navbar-custom {
+      background-color: #003366;
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #cccccc;
+    }
+    
+    /* Section styling */
+    section {
+      padding: 60px 0;
+    }
+    .section-title {
+      margin-bottom: 40px;
+      text-align: center;
+      color: #003366;
+    }
+    
+    /* Biography Section */
+    #bio img {
+      max-width: 100%;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    #bio img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Skills Section */
+    .skill {
+      margin-bottom: 20px;
+    }
+    .skill .skill-name {
+      font-weight: bold;
+    }
+    .progress {
+      height: 20px;
+      background-color: #e0e0e0;
+    }
+    .progress-bar {
+      background-color: #003366;
+      transition: width 1s ease;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #003366;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="profile-container">
-        <img src="Assets\download.jpg" alt="Profile Picture" class="profile-picture">
-        <h1 class="name">Nguyễn Hải Nguyên</h1>
-        <p class="bio">Junior Developer</p>
-    </div>
-    <div class="desciption">
-        <h2 id="BG">Background</h2>
-        <ul>
-            <li>Studied at: <a href="https://tieuhocnamthanhcong.edu.vn/"> Nam Thanh Cong ES</a>🪷</li>
-            <li>Studied at: <a href="https://thcsnguyentruongto.edu.vn/">Nguyen Truong To JHS</a>🪷</li>
-            <li>Studied at: <a href="https://luongthevinh.com.vn/home/">Luong The Vinh JHS></a>🪷</li>
-            <li>Studied at: <a href="https://c3dongda.edu.vn/">Dong Da HS</a>🪷</li>
-            <li>Studied at: <a href="https://brookfieldhs.ocdsb.ca/">Brookfield HS</a>🍁</li>
-            <li>Studied at: <a href="http://c3yh.edu.vn/">Yen Hoa HS</a>🪷</li>
-            <li>Studied at: <a href="https://www.rmit.edu.vn/vi">RMIT University Hanoi</a>🦘</li>
-        </ul>
-        <hr>
-    </div>
-    <div class="desciption">
-        <h2 id="MH">My Hobbies</h2>
-        <ul>
-            <li>Play Football⚽</li>
-            <li>Play Video Game🎮</li>
-            <li>Hang out with GF🐱</li>
-            <li>Sleep💤</li>
-        </ul>
-        <hr>
-    </div>
-    <div class="desciption">
-        <h2 id="MFL">My Favorite Languages</h2>
-        <ol>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Html</li>
-            <li>CSS</li>
-        </ol>
-    </div>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Phone number☎️: 0983292003</p>
-        <p>Email📧: nguyensama292003@gmail.com</p>
-        <a href=""><img src="Assets\facebook.png"></a>
-        <a href=""><img src="Assets\instagram.png"></a>
-        <a href=""><img src="Assets\discord.png"></a>
-    </section>
-    <script src="script.js"></script>
-</body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">My Profile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#bio">Biography</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section (Intro) -->
+  <section id="home" class="d-flex align-items-center" style="min-height: 100vh; background-color: #f8f9fa;">
+    <div class="container text-center" data-aos="fade-in">
+      <h1>Welcome to My Profile</h1>
+      <p class="lead">Discover more about me and my work.</p>
+    </div>
+  </section>
+
+  <!-- Biography Section -->
+  <section id="bio">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Biography</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center">
+          <!-- Replace with your profile picture -->
+          <img src="Assets\PFP.jpg" alt="Profile Picture">
+        </div>
+        <div class="col-md-8">
+          <p>Hello! I'm Nguyen Hai Nguyen, a passionate developer and designer. I enjoy creating modern, user-friendly websites and applications. With experience in various technologies, I'm always excited to learn and innovate. Welcome to my personal profile page!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" style="background-color: #f8f9fa;">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Projects</h2>
+      <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="https://via.placeholder.com/500x300" class="d-block w-100" alt="Project 1">
+              </div>
+              <div class="col-md-6">
+                <h3>Project Title 1</h3>
+                <p>Description of project 1. This project demonstrates my skills in web development and design.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="https://via.placeholder.com/500x300" class="d-block w-100" alt="Project 2">
+              </div>
+              <div class="col-md-6">
+                <h3>Project Title 2</h3>
+                <p>Description of project 2. This project showcases my ability to build responsive and modern websites.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="https://via.placeholder.com/500x300" class="d-block w-100" alt="Project 3">
+              </div>
+              <div class="col-md-6">
+                <h3>Project Title 3</h3>
+                <p>Description of project 3. An innovative project that reflects my passion for technology and creativity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Skills</h2>
+      <div class="row">
+        <!-- Skill 1 -->
+        <div class="col-md-6 skill">
+          <div class="d-flex align-items-center">
+            <i class="fab fa-html5 fa-2x me-3" style="color: #e34c26;"></i>
+            <div>
+              <div class="skill-name">HTML5</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="col-md-6 skill">
+          <div class="d-flex align-items-center">
+            <i class="fab fa-css3-alt fa-2x me-3" style="color: #264de4;"></i>
+            <div>
+              <div class="skill-name">CSS3</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 3 -->
+        <div class="col-md-6 skill">
+          <div class="d-flex align-items-center">
+            <i class="fab fa-js-square fa-2x me-3" style="color: #f0db4f;"></i>
+            <div>
+              <div class="skill-name">JavaScript</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 4 -->
+        <div class="col-md-6 skill">
+          <div class="d-flex align-items-center">
+            <i class="fab fa-react fa-2x me-3" style="color: #61DBFB;"></i>
+            <div>
+              <div class="skill-name">React</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" style="background-color: #f8f9fa;">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Gallery</h2>
+      <div class="row">
+        <!-- Gallery Image 1 -->
+        <div class="col-md-3">
+          <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Photo 1">
+            <img src="Assets\1.jpg" class="img-fluid mb-4" alt="Gallery Photo 1">
+          </a>
+        </div>
+        <!-- Gallery Image 2 -->
+        <div class="col-md-3">
+          <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Photo 2">
+            <img src="Assets\2.jpg" class="img-fluid mb-4" alt="Gallery Photo 2">
+          </a>
+        </div>
+        <!-- Gallery Image 3 -->
+        <div class="col-md-3">
+          <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Photo 3">
+            <img src="Assets\3.jpg" class="img-fluid mb-4" alt="Gallery Photo 3">
+          </a>
+        </div>
+        <!-- Gallery Image 4 -->
+        <div class="col-md-3">
+          <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Photo 4">
+            <img src="https://via.placeholder.com/400x300" class="img-fluid mb-4" alt="Gallery Photo 4">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Contact</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Email</h5>
+          <p><a href="mailto:ng.hainguyenwork@gmail.com">ng.hainguyenwork@gmail.com</a></p>
+          <h5>Phone</h5>
+          <p><a href="tel:+83983292003">+84 983 292 003</a></p>
+          <h5>Location</h5>
+          <p>Hanoi, Vietnam</p>
+          <h5>GitHub</h5>
+          <p><a href="https://github.com/Nguyen020903" target="_blank">github.com/Nguyen020903</a></p>
+        </div>
+        <div class="col-md-6">
+          <h5>Follow Me</h5>
+          <p>
+            <a href="https://www.instagram.com/ng.hainguyen/" target="_blank"><i class="fab fa-instagram fa-2x me-3"></i></a>
+            <a href="https://www.facebook.com/nguyen.nguyenhai.10441" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- jQuery (required for Bootstrap JS and some plugins) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Lightbox JS for gallery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Preloader fade out after 0.5 seconds
+    $(window).on('load', function () {
+      setTimeout(function(){
+        $('#preloader').fadeOut('slow');
+      }, 500);
+    });
+    
+    // Initialize AOS for scroll animations
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
 </html>
