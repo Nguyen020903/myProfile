@@ -23,7 +23,7 @@ Personal portfolio site for GitHub Pages (`https://<username>.github.io/`). Stat
 └── README.md
 ```
 
-**Note:** The folder is named `Assets` (capital A). All asset URLs in `index.html` use `Assets/...` so they resolve correctly on GitHub Pages (Linux hosts are case-sensitive).
+
 
 ## Run locally
 
@@ -44,6 +44,3 @@ npx --yes serve .
 
 In the repository **Settings → Pages**, set **Source** to deploy from the **`main`** branch and **root** (`/`). The live site URL will be `https://<your-username>.github.io/`.
 
-## Cleanup note
-
-If an empty `portfolio-website` folder remains after migrating, another process (for example the editor) may have had it open. Close anything using that path, then delete the folder manually—it is no longer needed.
