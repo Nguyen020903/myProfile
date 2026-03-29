@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full stack developer portfolio — React, Node.js, AI integration, MCP, and production systems.">
+  <title>Jordan Lee — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="Assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-component="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="#hero" data-scroll-link>JL</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="#about" data-scroll-link>About</a></li>
+          <li><a href="#stack" data-scroll-link>Stack</a></li>
+          <li><a href="#projects" data-scroll-link>Projects</a></li>
+          <li><a href="#experience" data-scroll-link>Experience</a></li>
+          <li><a href="#contact" data-scroll-link>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark theme" title="Theme">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"></span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+      <ul class="mobile-nav__list">
+        <li><a href="#about" data-scroll-link data-mobile-link>About</a></li>
+        <li><a href="#stack" data-scroll-link data-mobile-link>Stack</a></li>
+        <li><a href="#projects" data-scroll-link data-mobile-link>Projects</a></li>
+        <li><a href="#experience" data-scroll-link data-mobile-link>Experience</a></li>
+        <li><a href="#contact" data-scroll-link data-mobile-link>Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero" aria-labelledby="hero-title">
+      <div class="hero__grid">
+        <div class="hero__content reveal" data-reveal>
+          <p class="hero__eyebrow">IT graduate · builder of full-stack systems</p>
+          <h1 class="hero__title" id="hero-title">Jordan Lee</h1>
+          <p class="hero__subtitle">Full Stack Developer <span class="hero__sep">|</span> AI-integrated systems</p>
+          <p class="hero__lede">
+            I design and ship reliable web applications end to end: clear APIs, thoughtful React UIs, and data layers that stay maintainable as requirements change. Recent work spans AI-assisted workflows, MCP tooling, and automation that removes repetitive ops work without hiding the engineering underneath.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects" data-scroll-link>View projects</a>
+            <a class="btn btn--ghost" href="#contact" data-scroll-link>Contact</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal reveal--delay" data-reveal>
+          <div class="hero__portrait">
+            <img src="Assets/images/ProfilePIc.jpg" alt="Jordan Lee" width="320" height="320" decoding="async">
+          </div>
+          <ul class="hero__meta" aria-label="Quick facts">
+            <li><span class="hero__meta-label">Focus</span> Production APIs &amp; integrations</li>
+            <li><span class="hero__meta-label">Based in</span> Remote / APAC-friendly hours</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="about" aria-labelledby="about-title">
+      <div class="section__inner">
+        <header class="section__header reveal" data-reveal>
+          <h2 class="section__title" id="about-title">About</h2>
+          <p class="section__intro">Problem-solving with measurable outcomes, not buzzwords.</p>
+        </header>
+        <div class="about reveal reveal--delay" data-reveal>
+          <div class="about__text prose">
+            <p>
+              I approach software as systems: boundaries between services, failure modes, and how data flows when traffic or scope grows. My background is in IT and full-stack development, with hands-on experience integrating language models and automation into existing products—always behind explicit contracts (REST, MCP tools, webhooks) so behavior stays testable and observable.
+            </p>
+            <p>
+              On the frontend I prioritize accessible markup, predictable state, and CSS that scales. On the backend I lean on Node.js and Express for fast iteration, MongoDB when document shapes evolve, and structured logging plus health checks before calling something “done.”
+            </p>
+          </div>
+          <aside class="about__aside" aria-label="Working style">
+            <h3 class="about__aside-title">How I work</h3>
+            <ul class="about__list">
+              <li>Define API contracts early; document edge cases.</li>
+              <li>Automate repetitive flows (CI, n8n, or small scripts) after the manual path is understood.</li>
+              <li>Ship thin vertical slices, then harden with monitoring and tests.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="section__inner">
+        <header class="section__header reveal" data-reveal>
+          <h2 class="section__title" id="stack-title">Tech stack</h2>
+          <p class="section__intro">Grouped by layer—proficiency is relative to production use, not tutorial completion.</p>
+        </header>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal" data-reveal>
+            <h3 class="stack-card__title">Frontend</h3>
+            <ul class="stack-tags" data-proficiency-list>
+              <li><span class="stack-tags__name">HTML / semantic markup</span><span class="stack-bar" data-level="92"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">CSS (Flexbox, Grid, animations)</span><span class="stack-bar" data-level="90"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">JavaScript (ES6+)</span><span class="stack-bar" data-level="88"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">React</span><span class="stack-bar" data-level="85"><span class="stack-bar__fill"></span></span></li>
+            </ul>
+          </article>
+          <article class="stack-card reveal" data-reveal>
+            <h3 class="stack-card__title">Backend</h3>
+            <ul class="stack-tags" data-proficiency-list>
+              <li><span class="stack-tags__name">Node.js</span><span class="stack-bar" data-level="86"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">Express</span><span class="stack-bar" data-level="84"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">REST API design</span><span class="stack-bar" data-level="87"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">AI integration (SDKs, streaming)</span><span class="stack-bar" data-level="78"><span class="stack-bar__fill"></span></span></li>
+            </ul>
+          </article>
+          <article class="stack-card reveal" data-reveal>
+            <h3 class="stack-card__title">Database</h3>
+            <ul class="stack-tags" data-proficiency-list>
+              <li><span class="stack-tags__name">MongoDB</span><span class="stack-bar" data-level="82"><span class="stack-bar__fill"></span></span></li>
+              <li><span class="stack-tags__name">Indexing &amp; aggregation pipelines</span><span class="stack-bar" data-level="76"><span class="stack-bar__fill"></span></span></li>
+            </ul>
+          </article>
+          <article class="stack-card reveal" data-reveal>
+            <h3 class="stack-card__title">Tools &amp; DevOps</h3>
+            <ul class="stack-tags stack-tags--tags-only">
+              <li><span class="tag">Git / GitHub</span></li>
+              <li><span class="tag">MCP (Model Context Protocol)</span></li>
+              <li><span class="tag">n8n automation</span></li>
+              <li><span class="tag">Docker (basics)</span></li>
+              <li><span class="tag">CI workflows</span></li>
+              <li><span class="tag">Postman / OpenAPI</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="projects" aria-labelledby="projects-title">
+      <div class="section__inner">
+        <header class="section__header reveal" data-reveal>
+          <h2 class="section__title" id="projects-title">Projects</h2>
+          <p class="section__intro">Selected work with explicit problems, constraints, and technical decisions.</p>
+        </header>
+
+        <div class="projects" data-component="project-list">
+          <article class="project-card reveal" data-reveal>
+            <header class="project-card__header">
+              <h3 class="project-card__title">Operations Console</h3>
+              <span class="project-card__badge">Full stack</span>
+            </header>
+            <div class="project-card__body">
+              <h4 class="project-card__label">Problem</h4>
+              <p>Support and ops teams were juggling three separate tools to view customer accounts, subscription state, and manual fixes—slowing response times and increasing error rates.</p>
+              <h4 class="project-card__label">Solution</h4>
+              <p>Built a single React dashboard backed by an Express service layer over MongoDB, with role-based views and audit-friendly action logs. Introduced a normalized read model for list screens and explicit write endpoints for sensitive operations.</p>
+              <h4 class="project-card__label">Tech</h4>
+              <p class="project-card__tech">React · Express · MongoDB · JWT sessions · REST</p>
+              <h4 class="project-card__label">Highlights</h4>
+              <ul class="project-card__highlights">
+                <li>Designed pagination and filter queries against compound indexes to keep list views fast on growing collections.</li>
+                <li>Implemented optimistic UI for low-risk edits with server reconciliation on failure.</li>
+                <li>Added structured error payloads so the UI could surface actionable messages without leaking internals.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-reveal>
+            <header class="project-card__header">
+              <h3 class="project-card__title">Internal Docs MCP Server</h3>
+              <span class="project-card__badge">MCP · Node</span>
+            </header>
+            <div class="project-card__body">
+              <h4 class="project-card__label">Problem</h4>
+              <p>Engineers wanted LLM-assisted help inside the IDE, but public models had no access to private runbooks and API nuances—copy-pasting fragments was brittle and unsafe.</p>
+              <h4 class="project-card__label">Solution</h4>
+              <p>Shipped a Model Context Protocol server in Node.js that exposes curated tools: search indexed internal docs, fetch OpenAPI snippets by operationId, and return only redacted examples. Integrated with the team’s existing markdown repo and cache layer.</p>
+              <h4 class="project-card__label">Tech</h4>
+              <p class="project-card__tech">Node.js · MCP SDK · Express (health) · Redis-style in-memory cache (dev)</p>
+              <h4 class="project-card__label">Highlights</h4>
+              <ul class="project-card__highlights">
+                <li>Defined tool schemas with strict input validation to avoid ambiguous calls from agents.</li>
+                <li>Implemented RAG-style retrieval over chunked markdown with source citations in responses.</li>
+                <li>Documented transport setup (stdio vs SSE) for local and shared deployments.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-reveal>
+            <header class="project-card__header">
+              <h3 class="project-card__title">Lead Routing Automation</h3>
+              <span class="project-card__badge">n8n · APIs</span>
+            </header>
+            <div class="project-card__body">
+              <h4 class="project-card__label">Problem</h4>
+              <p>Inbound leads from forms and a CRM webhook arrived in bursts; manual triage in a spreadsheet caused duplicate outreach and missed SLAs.</p>
+              <h4 class="project-card__label">Solution</h4>
+              <p>Designed an n8n workflow that normalizes payloads, deduplicates by email hash, scores urgency from form fields, and opens tickets via REST. Failures route to a dead-letter queue with replay instructions.</p>
+              <h4 class="project-card__label">Tech</h4>
+              <p class="project-card__tech">n8n · REST webhooks · Express middleware (signature verify) · MongoDB (idempotency keys)</p>
+              <h4 class="project-card__label">Highlights</h4>
+              <ul class="project-card__highlights">
+                <li>HMAC verification on inbound hooks before side effects.</li>
+                <li>Idempotent writes so retries from the workflow engine never double-book.</li>
+                <li>Runbook for rotating credentials and monitoring workflow execution time.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-reveal>
+            <header class="project-card__header">
+              <h3 class="project-card__title">Public REST API &amp; Partner SDK</h3>
+              <span class="project-card__badge">API design</span>
+            </header>
+            <div class="project-card__body">
+              <h4 class="project-card__label">Problem</h4>
+              <p>Partners needed stable programmatic access to inventory and order status, but internal services were built for synchronous web traffic only—no versioning, no rate limits.</p>
+              <h4 class="project-card__label">Solution</h4>
+              <p>Introduced versioned REST resources under <code>/v1</code>, API keys with scoped roles, and sliding-window rate limiting. Published OpenAPI and a minimal JavaScript SDK that wraps auth and pagination.</p>
+              <h4 class="project-card__label">Tech</h4>
+              <p class="project-card__tech">Express · MongoDB · express-rate-limit · OpenAPI 3 · Jest</p>
+              <h4 class="project-card__label">Highlights</h4>
+              <ul class="project-card__highlights">
+                <li>Consistent error envelope: <code>code</code>, <code>message</code>, <code>requestId</code> for support correlation.</li>
+                <li>Integration tests against a disposable MongoDB fixture for CI.</li>
+                <li>Deprecation headers and changelog for breaking vs additive changes.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section__inner">
+        <header class="section__header reveal" data-reveal>
+          <h2 class="section__title" id="experience-title">Engineering work</h2>
+          <p class="section__intro">Systems shipped and integrations owned—titles de-emphasized in favor of outcomes.</p>
+        </header>
+        <ol class="timeline reveal" data-reveal>
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Product engineering — web platform</h3>
+              <p class="timeline__meta">2023 — present · hybrid team</p>
+              <ul class="timeline__list">
+                <li>Owned customer-facing React features backed by Express services; reduced average API round-trips on critical paths by batching reads and caching stable reference data.</li>
+                <li>Integrated an LLM-powered assist panel with streaming responses, guardrails on prompt templates, and server-side usage logging.</li>
+                <li>Maintained MongoDB collections: migration scripts for schema drift, index reviews after slow-query reports.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">IT &amp; integration projects</h3>
+              <p class="timeline__meta">2021 — 2023 · university &amp; freelance</p>
+              <ul class="timeline__list">
+                <li>Delivered small-business sites and admin tools with clear hosting and backup stories; standardized on Git-based deploys.</li>
+                <li>Built webhook bridges between form providers and internal inboxes; added validation and retry policies.</li>
+                <li>Experimented early with MCP-style tool servers for local developer workflows, later formalized into the internal docs project.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="section__inner">
+        <header class="section__header reveal" data-reveal>
+          <h2 class="section__title" id="contact-title">Contact</h2>
+          <p class="section__intro">Open to roles and selective freelance work where scope and constraints are explicit.</p>
+        </header>
+        <div class="contact-grid reveal" data-reveal>
+          <div class="contact-card">
+            <h3 class="contact-card__title">Direct</h3>
+            <p>
+              <a class="contact-link" href="mailto:jordan.lee.dev@proton.me">
+                <img src="Assets/icons/mail.svg" alt="" width="20" height="20" decoding="async">
+                jordan.lee.dev@proton.me
+              </a>
+            </p>
+            <p class="contact-card__note">Replace with your real address in <code>index.html</code> before publishing.</p>
+          </div>
+          <div class="contact-card">
+            <h3 class="contact-card__title">Profiles</h3>
+            <ul class="contact-social">
+              <li>
+                <a class="contact-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="Assets/icons/github.svg" alt="" width="20" height="20" decoding="async">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="Assets/icons/linkedin.svg" alt="" width="20" height="20" decoding="async">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+            <p class="contact-card__note">Update <code>href</code> values to your profiles.</p>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal--delay" data-reveal data-component="contact-form" name="contact" action="#" method="post">
+          <p class="contact-form__hint">This form is front-end only (no backend in this static demo). Wire it to Formspree, your API, or email service when you deploy.</p>
+          <div class="contact-form__row">
+            <label class="field">
+              <span class="field__label">Name</span>
+              <input class="field__input" type="text" name="name" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input class="field__input" type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Message</span>
+            <textarea class="field__input field__input--textarea" name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn btn--primary" type="submit">Send message</button>
+          <p class="contact-form__status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year></span> Jordan Lee. Built with semantic HTML, CSS, and vanilla JS.</p>
+      <button type="button" class="to-top" data-to-top aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
